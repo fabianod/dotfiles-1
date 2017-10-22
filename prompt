@@ -1,0 +1,35 @@
+# mkaz PS1 bash prompt
+# vim: syntax=sh ts=4 sw=4 sts=4 sr et
+
+source ~/dotfiles/extras/colors
+
+function parse_git_branch {
+    if [ -d .git ]; then
+        local result=`git name-rev --name-only @`
+        local change=`git status -s | wc -l`
+        local asterisk=''
+        if (( change > 0 )); then
+            asterisk="*"
+        fi
+        echo "git:$result$asterisk"
+    fi
+}
+
+function set_prompt {
+    local __time="\[$Cyan\]\@"
+
+    if [ -n "$SSH_CLIENT" ]; then
+        __host="\[$Red][`hostname`] "
+    else
+        __host=''
+    fi
+
+    local __dir="\[$Yellow\]\w"
+    local __git="\[$Green\]\$(parse_git_branch)"
+    local __prompt="\[$Red\]>"
+    local __off="\[$Color_Off\]"
+
+    export PS1="\n$__time $__host$__git $__dir\n$__prompt $__off"
+}
+set_prompt
+

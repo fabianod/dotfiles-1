@@ -1,0 +1,29 @@
+[user]
+    name = Marcus Kazmierczak
+    email = marcus@mkaz.com
+	signingkey = 82C4BC5F
+
+[alias]
+	pom = push origin master
+	stat = status
+	purr = pull --rebase
+	unfuck = reset HEAD --hard
+
+	# use to add files that your forgot
+	ohyeah = commit --amend -C HEAD
+	hist = log --pretty=format:'%ad | %Cblue%h%Creset%C(auto) ⇒ %<(47,trunc)%s  ☺ %an' --graph --date=format:'%b %d' --decorate
+
+[merge]
+	ff = only
+
+[push]
+    default = simple
+
+[commit]
+	gpgSign = true
+
+[github]
+    user = mkaz
+
+[fetch]
+	prune = true
