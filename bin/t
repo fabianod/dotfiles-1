@@ -5,7 +5,7 @@
 ## if that does not exist, use the current directory name
 
 ## Author: Marcus Kazmierczak
-## Site  : http://github.com/dotfiles
+## Site  : http://github.com/mkaz/dotfiles
 ## Date  : March 26, 2014
 
 # check if switching project name
@@ -42,7 +42,7 @@ case $1 in
 		;;
     ## set environment variable to current dir
     "switch" )
-        echo "Setting Projet to $CURRENT_DIR" 
+        echo "Setting Projet to $CURRENT_DIR"
         echo "$CURRENT_DIR" > $MY_PROJECT_FILE
         ;;
 
