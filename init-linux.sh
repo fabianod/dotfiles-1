@@ -1,8 +1,9 @@
 #!/bin/bash
 
-## Ubuntu Gnome initial setup script
+# install script for setting up linux
+# typicall an ubuntu / gnome distro
 
-## check positional paorameters
+## check positional parameters
 # -d for desktop install
 # -h help
 desktopflag=''
