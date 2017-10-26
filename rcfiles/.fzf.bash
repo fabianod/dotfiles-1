@@ -1,3 +1,4 @@
+
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */home/mkaz/.fzf/bin* ]]; then
@@ -6,11 +7,14 @@ fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/mkaz/.fzf/shell/completion.bash" 2> /dev/null
+[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.bash" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/home/mkaz/.fzf/shell/key-bindings.bash"
+if [ -e "$HOME/.fzf/shell/key-bindings.bash" ]
+then
+    source $HOME/.fzf/shell/key-bindings.bash
+fi
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
