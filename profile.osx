@@ -9,3 +9,7 @@ alias ll='ls -lhGo '
 alias xps='ps -ax '
 alias xpsg='ps -ax | grep -i'
 
+
+if [[ -e /usr/local/etc/bash_completion.d/pass ]]; then
+    source /usr/local/etc/bash_completion.d/pass
+fi
