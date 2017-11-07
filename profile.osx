@@ -10,6 +10,11 @@ alias xps='ps -ax '
 alias xpsg='ps -ax | grep -i'
 
 
+alias apache='sudo /usr/local/bin/apachectl'
+alias vaconf='sudo vim /usr/local/etc/httpd/httpd.conf'
+alias alog='less /usr/local/var/log/httpd/error_log'
+alias tailoge='tail -f /usr/local/var/log/httpd/error_log'
+
 if [[ -e /usr/local/etc/bash_completion.d/pass ]]; then
     source /usr/local/etc/bash_completion.d/pass
 fi
