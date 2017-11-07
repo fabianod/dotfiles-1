@@ -19,7 +19,7 @@ function set_prompt {
     local __time="\[$Cyan\]\@"
 
     if [ -n "$SSH_CLIENT" ]; then
-        __host="\[$Red][`hostname`] "
+        __host="\[$Red\][`hostname`] "
     else
         __host=''
     fi
