@@ -16,7 +16,9 @@ export SVN_EDITOR='vim'
 export GNUTERM=x11
 export GPG_TTY=$(tty)
 
-source ~/dotfiles/bin/z.sh
+#source ~/dotfiles/bin/z.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
 
 PATH=".:$HOME/bin:$HOME/node_modules/.bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$PATH"
 export PATH
