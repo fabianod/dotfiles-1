@@ -1,0 +1,8 @@
+
+# Settings
+
+fontName    = "Hack"
+fontSize    = 16
+
+excludeInFolderSearch = "{$excludeInFolderSearch,node_modules}"
+excludeInFileChooser = "{$exclude,$excludeInFolderSearch}"
