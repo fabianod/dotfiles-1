@@ -30,6 +30,7 @@ alias curl='curl --silent'
 alias wget='wget -q'
 alias screen='screen -R -U -A '
 alias make='make --quiet'
+alias less='less -r'
 
 # shortcuts
 alias mtr='sudo mtr'
