@@ -1,6 +1,8 @@
 # mkaz linux specific profile.lx
 # vim: syntax=sh ts=4 sw=4 sts=4 sr et
 
+# load autojump
+source /usr/share/autojump/autojump.sh
 
 # default command options
 alias df='df -h -x tmpfs'

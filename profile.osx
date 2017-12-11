@@ -1,6 +1,8 @@
 # mkaz osx specific profile
 # vim: syntax=sh ts=4 sw=4 sts=4 sr et
 
+# load autojump, installed via brew
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # default command options
 alias df='df -h -l'
