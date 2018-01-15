@@ -71,6 +71,15 @@ if [[ -e ~/dotfiles/rcfiles/.fzf.bash ]]; then
     source ~/dotfiles/rcfiles/.fzf.bash
 fi
 
+function wppull () {
+  rsync -az --delete --delete-after --exclude '.svn' --exclude '.git' --exclude 'build' --exclude 'node_modules' --exclude 'vendor' wpcom:/home/wpcom/public_html/wp-content/a8c-plugins/gutenberg-p2-fork/ ~/src/a8c/gutenberg-p2-fork/
+}
+
+function wppush () {
+  rsync -az --delete --delete-after --exclude '.svn' --exclude '.git' --exclude 'build' --exclude 'node_modules' --exclude 'vendor' ~/src/a8c/gutenberg-p2-fork/ wpcom:/home/wpcom/public_html/wp-content/a8c-plugins/gutenberg-p2-fork/
+}
+
+
 # dont bother me
 unset command_not_found_handle
 
