@@ -53,8 +53,8 @@ stow rcfiles
 
 
 # basics
-sudo apt-get -y install build-essential automake autoconf gnu-standards libtool gettext
-sudo apt-get -y install curl wget pwgen dnsutils htop ufw pass ruby-dev ctags autojump
+sudo apt-get -y install build-essential automake autoconf gnu-standards libtool gettext ctags
+sudo apt-get -y install curl wget pwgen net-tools dnsutils htop ufw pass ruby-dev autojump
 sudo apt-get -y install imagemagick graphicsmagick pandoc units figlet
 
 # install ripgrep
