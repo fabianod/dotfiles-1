@@ -59,11 +59,11 @@ sudo apt-get -y install imagemagick graphicsmagick pandoc units figlet
 
 # install ripgrep
 cd $HOME/Downloads
-wget https://github.com/BurntSushi/ripgrep/releases/download/0.7.1/ripgrep-0.7.1-x86_64-unknown-linux-musl.tar.gz
-tar xvfz ripgrep-0.7.1-x86_64-unknown-linux-musl.tar.gz
-cp ripgrep-0.7.1-x86_64-unknown-linux-musl/rg $HOME/bin/
-sudo cp ripgrep-0.7.1-x86_64-unknown-linux-musl/rg.1 /usr/share/man/man1/
-sudo cp ripgrep-0.7.1-x86_64-unknown-linux-musl/complete/rg.bash-completion /etc/bash_completion.d/
+wget https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep-0.8.1-x86_64-unknown-linux-musl.tar.gz
+tar xvfz ripgrep-0.8.1-x86_64-unknown-linux-musl.tar.gz
+cp ripgrep-0.8.1-x86_64-unknown-linux-musl/rg $HOME/bin/
+sudo cp ripgrep-0.8.1-x86_64-unknown-linux-musl/rg.1 /usr/share/man/man1/
+sudo cp ripgrep-0.8.1-x86_64-unknown-linux-musl/complete/rg.bash-completion /etc/bash_completion.d/
 
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -80,7 +80,7 @@ fi
 
 # node
 cd $HOME/Downloads
-curl --silent --location https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl --silent --location https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get -y install nodejs
 
 # golang
@@ -89,9 +89,9 @@ sudo apt-get -y install golang-go
 # syncthing
 if [ ! -f "$HOME/bin/syncthing" ]; then
     cd $HOME/Downloads
-    wget https://github.com/syncthing/syncthing/releases/download/v0.14.23/syncthing-linux-amd64-v0.14.23.tar.gz
-    tar xfz syncthing-linux-amd64-v0.14.23.tar.gz
-    cp syncthing-linux-amd64-v0.14.23/syncthing $HOME/bin/
+    wget https://github.com/syncthing/syncthing/releases/download/v0.14.45/syncthing-linux-amd64-v0.14.45.tar.gz
+    tar xfz syncthing-linux-amd64-v0.14.45.tar.gz
+    cp syncthing-linux-amd64-v0.14.45/syncthing $HOME/bin/
     mkdir -p $HOME/.config/autostart
     cp $HOME/dotfiles/extras/autostart-syncthing.desktop $HOME/.config/autostart/syncthing.desktop
     cd
