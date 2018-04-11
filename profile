@@ -53,7 +53,14 @@ alias ls-l='ls -l'
 # Go
 export GOPATH="$HOME"
 
+# Prompt
 source ~/dotfiles/prompt
+
+# Directory colors
+if [[ -e $HOME/dotfiles/extras/dircolors ]]; then
+    eval $(dircolors -b $HOME/dotfiles/extras/dircolors)
+fi
+
 
 # run os specific profile
 if [[ "$SYS_OS" == "Darwin" ]]; then
