@@ -3,17 +3,17 @@
 
 source ~/dotfiles/extras/colors
 
-function parse_git_branch {
-    if [ -d .git ]; then
-        local result=`git name-rev --name-only @`
-        local change=`git status -s | wc -l`
-        local asterisk=''
-        if (( change > 0 )); then
-            asterisk="*"
-        fi
-        echo "git:$result$asterisk"
-    fi
-}
+#function parse_git_branch {
+    #if [ -d .git ]; then
+        #local result=`git name-rev --name-only @`
+        #local change=`git status -s | wc -l`
+        #local asterisk=''
+        #if (( change > 0 )); then
+            #asterisk="*"
+        #fi
+        #echo "git:$result$asterisk"
+    #fi
+#}
 
 function set_prompt {
     local __time="\[$Cyan\]\@"
@@ -25,7 +25,7 @@ function set_prompt {
     fi
 
     local __dir="\[$Yellow\]\w"
-    local __git="\[$Green\]\$(parse_git_branch)"
+    #local __git="\[$Green\]\$(parse_git_branch)"
     local __prompt="\[$Red\]>"
     local __off="\[$Color_Off\]"
 
