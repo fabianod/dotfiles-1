@@ -56,7 +56,7 @@ set nowrap
 set autoindent
 set smartindent
 set smarttab
-set expandtab
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -160,6 +160,8 @@ augroup configgroup
 
 	" Remember last location in file
 	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+    autocmd filetype crontab setlocal nobackup nowritebackup
 
 augroup END
 
