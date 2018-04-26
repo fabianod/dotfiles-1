@@ -54,8 +54,8 @@ stow rcfiles
 
 # basics
 sudo apt-get -y install build-essential automake autoconf gnu-standards libtool gettext ctags
-sudo apt-get -y install curl wget pwgen net-tools dnsutils htop ufw pass ruby-dev autojump
-sudo apt-get -y install imagemagick graphicsmagick pandoc units figlet
+sudo apt-get -y install curl wget pwgen net-tools dnsutils htop ufw pass autojump tilix
+sudo apt-get -y install imagemagick pandoc units figlet ruby-dev
 
 # install ripgrep
 cd $HOME/Downloads
@@ -80,7 +80,7 @@ fi
 
 # node
 cd $HOME/Downloads
-curl --silent --location https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl --silent --location https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get -y install nodejs
 
 # golang
@@ -89,9 +89,9 @@ sudo apt-get -y install golang-go
 # syncthing
 if [ ! -f "$HOME/bin/syncthing" ]; then
     cd $HOME/Downloads
-    wget https://github.com/syncthing/syncthing/releases/download/v0.14.45/syncthing-linux-amd64-v0.14.45.tar.gz
-    tar xfz syncthing-linux-amd64-v0.14.45.tar.gz
-    cp syncthing-linux-amd64-v0.14.45/syncthing $HOME/bin/
+    wget https://github.com/syncthing/syncthing/releases/download/v0.14.46/syncthing-linux-amd64-v0.14.46.tar.gz
+    tar xfz syncthing-linux-amd64-v0.14.46.tar.gz
+    cp syncthing-linux-amd64-v0.14.46/syncthing $HOME/bin/
     mkdir -p $HOME/.config/autostart
     cp $HOME/dotfiles/extras/autostart-syncthing.desktop $HOME/.config/autostart/syncthing.desktop
     cd
@@ -99,7 +99,7 @@ fi
 
 # LAMP
 sudo apt-get -y install mysql-client mysql-server memcached
-sudo apt-get -y install php7.0 php7.0-cli php7.0-common php7.0-curl php7.0-dev php-memcached php7.0-mysql php7.0-mcrypt php7.0-json php-mbstring php-intl
+sudo apt-get -y install php php-cli php-common php-curl php-dev php-memcached php-mysql php-mcrypt php-json php-mbstring php-intl
 sudo apt-get -y install apache2 libapache2-mod-php
 sudo a2enmod rewrite expires vhost_alias ssl
 
