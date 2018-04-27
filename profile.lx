@@ -20,3 +20,5 @@ alias mtr='sudo mtr'
 alias apache='sudo service apache2'
 alias vaconf='sudo vim /etc/apache2/sites-available/000-default.conf'
 
+# dont bother me
+unset command_not_found_handle
