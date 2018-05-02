@@ -131,10 +131,6 @@ sudo ufw enable
 mkdir -p ~/.config/Code/User
 cp ~/dotfiles/extras/vscode-settings.json ~/.config/Code/User/settings.json
 
-
-# colors
-bash $HOME/dotfiles/extras/base16-tomorrow-night-terminal.sh
-
 # javascript modules
 sudo npm install -g eslint node-sass
 
