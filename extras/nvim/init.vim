@@ -27,7 +27,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
-Plug 'chriskempson/base16-vim'
 call plug#end()
 
 
