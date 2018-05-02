@@ -11,8 +11,8 @@ export HISTSIZE=5000
 export SAVEHIST=5000
 export HOSTNAME="`hostname`"
 export PAGER='less'
-export EDITOR='vim'
-export SVN_EDITOR='vim'
+export EDITOR='nvim'
+export SVN_EDITOR='nvim'
 export GNUTERM=x11
 export GPG_TTY=$(tty)
 
@@ -27,13 +27,14 @@ alias wget='wget -q'
 alias screen='screen -R -U -A '
 alias make='make --quiet'
 alias less='less -r'
+alias vim='nvim'
 
 # shortcuts
 alias mtr='sudo mtr'
 alias top='htop'
 alias svnig='svn --ignore-externals'
 alias svnd='svn --config-option config:helpers:diff-cmd=colordiff diff'
-alias vihosts='sudo vim /etc/hosts'
+alias vihosts='sudo nvim /etc/hosts'
 alias visudo='sudo visudo'
 alias nb='jupyter-notebook'
 

@@ -44,18 +44,21 @@ sudo apt-get update
 sudo apt-get -y upgrade
 
 ## double check we have these
-sudo apt-get -y install git sudo zip stow vim vim-nox
+sudo apt-get -y install git sudo zip stow
 
 ## use stow to configure rcfiles
 cd ~/dotfiles/
-stow vim
 stow rcfiles
-
 
 # basics
 sudo apt-get -y install build-essential automake autoconf gnu-standards libtool gettext ctags
 sudo apt-get -y install curl wget pwgen net-tools dnsutils htop ufw pass autojump tilix
 sudo apt-get -y install imagemagick pandoc units figlet ruby-dev
+
+# neovim
+sudo apt-get -y neovim python3-neovim ruby-neovim
+ln -s ~/dotfiles/extras/nvim ~/.config/nvim
+
 
 # install ripgrep
 cd $HOME/Downloads
