@@ -52,13 +52,16 @@ stow rcfiles
 
 # basics
 sudo apt-get -y install build-essential automake autoconf gnu-standards libtool gettext ctags
-sudo apt-get -y install curl wget pwgen net-tools dnsutils htop ufw pass autojump tilix
+sudo apt-get -y install curl wget pwgen net-tools dnsutils htop ufw pass autojump
 sudo apt-get -y install imagemagick pandoc units figlet ruby-dev
 
 # neovim
 sudo apt-get -y neovim python3-neovim ruby-neovim
 ln -s ~/dotfiles/extras/nvim ~/.config/nvim
 
+# tilix terminal
+sudo apt-get -y install tilix
+sudo cp ~/dotfiles/extras/gruvbox-dark.json /usr/share/tilix/schemes/
 
 # install ripgrep
 cd $HOME/Downloads
