@@ -33,6 +33,7 @@ cd $HOME
 rm -f .profile
 ln -s dotfiles/profile .profile
 ln -s ~/Documents/Sync/pass-store .password-store
+ln -s dotfiles/bin/t bin/t
 
 mkdir ~/bin/
 mkdir ~/src/
@@ -52,7 +53,8 @@ stow rcfiles
 
 # basics
 sudo apt-get -y install build-essential automake autoconf gnu-standards libtool gettext ctags
-sudo apt-get -y install curl wget pwgen net-tools dnsutils htop ufw pass autojump
+sudo apt-get -y install curl wget pwgen net-tools dnsutils htop ufw
+sudo apt-get -y install pass autojump taskwarrior
 sudo apt-get -y install imagemagick pandoc units figlet ruby-dev
 
 # neovim
