@@ -37,7 +37,7 @@ fi
 case $1 in
 
 	"standup" )
-		LAST_WEEK=`/bin/date -v -7d +"%Y-%m-%d"`
+		LAST_WEEK=`/bin/date --date "7 days ago" +"%Y-%m-%d"`
 		task end.after:$LAST_WEEK $PROJ complete
 		;;
     ## set environment variable to current dir
