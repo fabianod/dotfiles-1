@@ -25,7 +25,6 @@ Plug 'fatih/vim-go'
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
 call plug#end()
 
@@ -128,7 +127,7 @@ augroup configgroup
 	autocmd FileType python map <Leader>r :w<CR>:!python %<CR>
 
 	" PHP File Types (WordPress, use tabs)
-	autocmd FileType php set expandtab
+	autocmd FileType php set noexpandtab
 
 	" golang
 	autocmd BufRead,BufNewFile *.go set filetype=go
