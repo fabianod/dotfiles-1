@@ -37,6 +37,7 @@ alias svnd='svn --config-option config:helpers:diff-cmd=colordiff diff'
 alias vihosts='sudo nvim /etc/hosts'
 alias visudo='sudo visudo'
 alias nb='jupyter-notebook'
+alias t='task'
 
 alias mysql='mysql --defaults-extra-file=~/.mysql-config'
 alias mysqldump='mysqldump --defaults-extra-file=~/.mysql-config'

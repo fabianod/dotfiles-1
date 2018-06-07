@@ -31,3 +31,8 @@ report.ayer.description=Last day of activity
 report.ayer.columns=id,project,due,scheduled,status,description
 report.ayer.sort=status+\/,project+,entry+
 report.ayer.filter=entry:yesterday or end.after:yesterday
+
+report.lastweek.description=Completed Last Week
+report.lastweek.columns=project,modified,status,description
+report.lastweek.sort=project+,status+\/,entry+
+report.lastweek.filter=end.after:today-7days
