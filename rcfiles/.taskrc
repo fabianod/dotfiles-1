@@ -27,3 +27,7 @@ data.location=~/Documents/Sync/tasks
 
 report.completed.columns=end,project,priority,entry.age,description,tags
 report.completed.labels=Complete,Proj,Pri,Age,Description,Tags
+report.ayer.description=Last day of activity
+report.ayer.columns=id,project,due,scheduled,status,description
+report.ayer.sort=status+\/,project+,entry+
+report.ayer.filter=entry:yesterday or end.after:yesterday
