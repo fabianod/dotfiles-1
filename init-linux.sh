@@ -107,7 +107,7 @@ fi
 
 # LAMP
 sudo apt-get -y install mysql-client mysql-server memcached
-sudo apt-get -y install php php-cli php-common php-curl php-dev php-memcached php-mysql php-mcrypt php-json php-mbstring php-intl php-xml
+sudo apt-get -y install php php-cli php-common php-curl php-dev php-memcached php-mysql php-json php-mbstring php-intl php-xml
 sudo apt-get -y install apache2 libapache2-mod-php
 sudo a2enmod rewrite expires vhost_alias ssl
 
