@@ -24,8 +24,10 @@ call plug#begin('~/.config/plugged')
 Plug 'fatih/vim-go'
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
 call plug#end()
 
 
