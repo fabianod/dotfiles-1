@@ -85,6 +85,7 @@ if [[ -e ~/dotfiles/extras/git-completion.bash ]]; then
     source ~/dotfiles/extras/git-completion.bash
 fi
 
+export SANDBOX=wpcom
 function wppull () {
   rsync -az --delete --delete-after --exclude '.svn' --exclude '.git' --exclude 'build' --exclude 'node_modules' --exclude 'vendor' wpcom:/home/wpcom/public_html/wp-content/a8c-plugins/gutenberg-p2-fork/ ~/src/a8c/gutenberg-p2-fork/
 }
