@@ -16,6 +16,6 @@ then
     source $HOME/.fzf/shell/key-bindings.bash
 fi
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --ignore-file /home/mkaz/dotfiles/extras/gitignore'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #bind -x '"\C-p": vim $(fzf);'

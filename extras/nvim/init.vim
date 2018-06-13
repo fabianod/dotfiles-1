@@ -25,9 +25,12 @@ Plug 'fatih/vim-go'
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
+Plug 'reedes/vim-pencil'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
+Plug 'w0rp/ale'
 call plug#end()
 
 
@@ -121,8 +124,9 @@ augroup configgroup
 	" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 	autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
-	" md, markdown, and mk are markdown and define buffer-local preview
-	autocmd BufRead,BufNewFile *.md set tw=80 wrap linebreak nolist
+	" md, markdown
+	autocmd FileType markdown,md  call pencil#init()
+	autocmd FileType text         call pencil#init()
 
 	" Python File Types (use spaces)
 	autocmd FileType python set expandtab
@@ -170,8 +174,7 @@ ca w!! w !sudo tee >/dev/null "%"
 nmap <silent> <Leader><Space> :nohlsearch<CR>
 
 " Explore File menu
-let g:netrw_liststyle=3
-map <F2> :Explore<CR>
+map <F2> :NERDTreeToggle<CR>
 
 
 " Command-/ to toggle comments
@@ -221,6 +224,8 @@ map <Leader>w :set list<CR>
 
 " }}}
 
+" Ale - Asynchronous Lint Engine
+let g:ale_sign_column_always = 1
 
 " :Wrap command
 command! -nargs=* Wrap set wrap linebreak nolist
@@ -247,7 +252,6 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-
 
 " vim:foldmethod=marker:foldlevel=0
 
