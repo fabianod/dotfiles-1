@@ -30,9 +30,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 call plug#end()
-
 
 " Settings {{{
 
@@ -46,7 +47,7 @@ set listchars=tab:▸\ ,eol:¬
 syntax on
 set background=dark
 if has( "termguicolors" )
-	set termguicolors
+    set termguicolors
 endif
 colorscheme gruvbox
 " }}}
@@ -62,8 +63,8 @@ set softtabstop=4
 
 " Display {{{
 set number            " show line numbers
-set ruler			  " show ruler
-set showcmd			  " show command in bottom bar
+set ruler              " show ruler
+set showcmd              " show command in bottom bar
 " }}}
 
 " Operation {{{
@@ -72,8 +73,8 @@ set hidden            " allows to switch to/from unsaved buffers
 set nobackup
 set noswapfile
 
-set modeline			" use modeline override
-set modelines=2			" check last two lines
+set modeline            " use modeline override
+set modelines=2            " check last two lines
 
 let g:python3_host_prog = '/usr/local/bin/python3'
 " }}}
@@ -89,9 +90,9 @@ autocmd VimEnter * set vb t_vb=
 " }}}
 
 " Folding {{{
-set foldenable    			" enable folding
-set foldlevelstart=10		" start with expanded
-set foldnestmax=10			" max number of nested folds
+set foldenable                " enable folding
+set foldlevelstart=10        " start with expanded
+set foldnestmax=10            " max number of nested folds
 
 " space open/close folds
 nnoremap <space> za
@@ -119,43 +120,43 @@ filetype plugin indent on
 
 augroup configgroup
 
-	autocmd!
+    autocmd!
 
-	" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-	autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+    " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+    autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 
-	" md, markdown
-	autocmd FileType markdown,md  call pencil#init()
-	autocmd FileType text         call pencil#init()
+    " md, markdown
+    autocmd FileType markdown,md  call pencil#init()
+    autocmd FileType text         call pencil#init()
 
-	" Python File Types (use spaces)
-	autocmd FileType python set expandtab
-	autocmd FileType python map <Leader>r :w<CR>:!python %<CR>
+    " Python File Types (use spaces)
+    autocmd FileType python set expandtab
+    autocmd FileType python map <Leader>r :w<CR>:!python %<CR>
 
-	" PHP File Types (WordPress, use tabs)
-	autocmd FileType php set noexpandtab
+    " PHP File Types (WordPress, use tabs)
+    autocmd FileType php set noexpandtab
 
-	" golang
-	autocmd BufRead,BufNewFile *.go set filetype=go
-	autocmd FileType go nmap <leader>r <Plug>(go-run)
-	autocmd FileType go nmap <leader>b <Plug>(go-build)
-	autocmd FileType go nmap <leader>t <Plug>(go-test)
-	let g:go_fmt_command = "goimports"
+    " golang
+    autocmd BufRead,BufNewFile *.go set filetype=go
+    autocmd FileType go nmap <leader>r <Plug>(go-run)
+    autocmd FileType go nmap <leader>b <Plug>(go-build)
+    autocmd FileType go nmap <leader>t <Plug>(go-test)
+    let g:go_fmt_command = "goimports"
 
-	" Apache
-	autocmd FileType apache set expandtab
+    " Apache
+    autocmd FileType apache set expandtab
 
-	" Templates
-	autocmd BufRead,BufNewFile *.{tpl,eco}    set ft=html
+    " Templates
+    autocmd BufRead,BufNewFile *.{tpl,eco}    set ft=html
 
-	" load skeleton if exists
-  	autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
+    " load skeleton if exists
+    autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
 
-	" auto strip whitespace for filetypes
-	autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+    " auto strip whitespace for filetypes
+    autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-	" Remember last location in file
-	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+    " Remember last location in file
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
     autocmd filetype crontab setlocal nobackup nowritebackup
 
@@ -226,6 +227,13 @@ map <Leader>w :set list<CR>
 
 " Ale - Asynchronous Lint Engine
 let g:ale_sign_column_always = 1
+
+" Airline
+let g:airline_theme='base16_tomorrow'
+let g:airline_powerline_fonts = 1
+let g:airline_section_x = airline#section#create([''])
+let g:airline_section_y = airline#section#create([''])
+let g:airline_section_z = airline#section#create([ g:airline_symbols.linenr, '%l:%c' ])
 
 " :Wrap command
 command! -nargs=* Wrap set wrap linebreak nolist
