@@ -113,6 +113,7 @@ set wildignore+=.hg,.git,.svn         "version control
 set wildignore+=*.rbc,*.class,*.pyc   "compiled formats
 set wildignore+=*.DS_Store            "OSX files
 
+
 " }}}
 
 " File Specific {{{
@@ -227,6 +228,8 @@ map <Leader>w :set list<CR>
 
 " }}}
 
+" Plugin Settings {{{
+
 " Ale - Asynchronous Lint Engine
 let g:ale_sign_column_always = 1
 
@@ -237,11 +240,10 @@ let g:airline_section_x = airline#section#create([''])
 let g:airline_section_y = airline#section#create([''])
 let g:airline_section_z = airline#section#create([ g:airline_symbols.linenr, '%l:%c' ])
 
-" :Wrap command
-command! -nargs=* Wrap set wrap linebreak nolist
+" Editor Config
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-" Math
-nmap ++ i<c-R>=
+" }}}
 
 " fzf and ripgrep
 map <Leader>p :Files<CR>
@@ -250,6 +252,9 @@ nmap ; :Buffers<CR>
 " use ripgrep for finding text
 map <Leader>f :Find<space>
 command! -bang -nargs=* Find call fzf#vim#grep( 'rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+" :Wrap command
+command! -nargs=* Wrap set wrap linebreak nolist
 
 " strips trailing whitespace at the end of files. this
 " is called on buffer write in the autogroup above.
