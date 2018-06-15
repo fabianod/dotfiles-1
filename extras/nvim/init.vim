@@ -21,6 +21,7 @@ filetype off
 
 " use vim-plug to manage plugins
 call plug#begin('~/.config/plugged')
+Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
@@ -28,6 +29,7 @@ Plug 'mhinz/vim-startify'
 Plug 'reedes/vim-pencil'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
 Plug 'vim-airline/vim-airline'
