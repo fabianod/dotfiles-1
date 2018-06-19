@@ -26,7 +26,6 @@ Plug 'fatih/vim-go'
 Plug 'junegunn/fzf',  { 'dir': '~/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
-Plug 'reedes/vim-pencil'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -127,10 +126,6 @@ augroup configgroup
 
     " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
     autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
-
-    " md, markdown
-    autocmd FileType markdown,md  call pencil#init()
-    autocmd FileType text         call pencil#init()
 
     " Python File Types (use spaces)
     autocmd FileType python set expandtab
