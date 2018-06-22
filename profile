@@ -6,9 +6,11 @@ HOSTNAME=`hostname -s`
 
 export TZ='America/Los_Angeles'
 export TERM='xterm-256color'
-export HISTFILE=$HOME/.zhistory
-export HISTSIZE=5000
-export SAVEHIST=5000
+export HISTCONTROL="ignoredups:erasedups"
+export HISTSIZE=99999
+export SAVEHIST=99999
+shopt -s histappend
+
 export HOSTNAME="`hostname`"
 export PAGER='less'
 export EDITOR='nvim'
