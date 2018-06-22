@@ -3,37 +3,12 @@
 # install script for setting up linux
 # typicall an ubuntu / gnome distro
 
-## check positional parameters
-# -d for desktop install
-# -h help
-desktopflag=''
-helpflag=''
-
-while getopts 'dh' flag; do
-	case "${flag}" in
-		d) desktopflag="yes" ;;
-		h) helpflag="yes" ;;
-		*) break ;;
-	esac
-done
-
-if [[ $helpflag == "yes" ]]; then
-	echo Ubuntu Gnome initial setup script
-	echo "Usage: "
-	echo "$ init-linux.sh OPTS"
-	echo "    -d   - desktop packages"
-	echo "    -h   - this help message"
-	exit 1
-fi
-
-
 UNAME=`uname`
 cd $HOME
 
 rm -f .profile
 ln -s dotfiles/profile .profile
 ln -s ~/Documents/Sync/pass-store .password-store
-ln -s dotfiles/bin/t bin/t
 
 mkdir ~/bin/
 mkdir ~/src/
@@ -78,17 +53,15 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 
 # desktop install
-if [[ $desktopflag == "yes" ]]; then
-	echo ">> Installing Desktop packages"
-	sudo apt-get -y install xclip gpick
-	cd /usr/share/fonts/truetype
-	sudo unzip $HOME/dotfiles/extras/fonts.zip
-	cd
-fi
+sudo apt-get -y install xclip gpick
+mkdir ~/.fonts
+cd ~/.fonts
+unzip $HOME/dotfiles/extras/fonts.zip
+cd
 
 # node
 cd $HOME/Downloads
-curl --silent --location https://deb.nodesource.com/setup_9.x | sudo -E bash -
+curl --silent --location https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get -y install nodejs
 
 # golang
@@ -97,9 +70,9 @@ sudo apt-get -y install golang-go
 # syncthing
 if [ ! -f "$HOME/bin/syncthing" ]; then
     cd $HOME/Downloads
-    wget https://github.com/syncthing/syncthing/releases/download/v0.14.46/syncthing-linux-amd64-v0.14.46.tar.gz
-    tar xfz syncthing-linux-amd64-v0.14.46.tar.gz
-    cp syncthing-linux-amd64-v0.14.46/syncthing $HOME/bin/
+    wget https://github.com/syncthing/syncthing/releases/download/v0.14.48/syncthing-linux-amd64-v0.14.48.tar.gz
+    tar xfz syncthing-linux-amd64-v0.14.48.tar.gz
+    cp syncthing-linux-amd64-v0.14.48/syncthing $HOME/bin/
     mkdir -p $HOME/.config/autostart
     cp $HOME/dotfiles/extras/autostart-syncthing.desktop $HOME/.config/autostart/syncthing.desktop
     cd
@@ -128,7 +101,6 @@ sudo ufw limit ssh
 sudo ufw allow 80
 sudo ufw enable
 
-
 # vscode
 mkdir -p ~/.config/Code/User
 cp ~/dotfiles/extras/vscode-settings.json ~/.config/Code/User/settings.json
@@ -139,5 +111,6 @@ sudo npm install -g eslint node-sass
 echo "Configure MySQL password. Run:"
 echo "mysql_config_editor set --login-path=local --host=localhost --user=username --password"
 
+# cleanup
 sudo apt-get -y autoremove
 # vim: syntax=sh ts=4 sw=4 sts=4 sr et
