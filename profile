@@ -6,6 +6,7 @@ HOSTNAME=`hostname -s`
 
 export TZ='America/Los_Angeles'
 export TERM='xterm-256color'
+export HISTFILE='~/.bash_history'
 export HISTCONTROL="ignoredups:erasedups"
 export HISTSIZE=99999
 export SAVEHIST=99999
