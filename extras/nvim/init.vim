@@ -28,6 +28,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
@@ -188,8 +189,8 @@ map <Leader>3 :b#<CR>
 map <Leader>n :bn<CR>
 
 " Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
+nmap <C-Up> :m .-2<CR>
+nmap <C-Down> :m  .+1<CR>
 
 " Bubble multiple lines
 vmap <C-Up> [egv
